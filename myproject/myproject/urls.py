@@ -1,4 +1,4 @@
-"""myproject URL Configuration
+"""project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -20,4 +20,10 @@ import myapp.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myapp.views.index, name='index'),
+    path('myapp/index/', myapp.views.index, name='index'),
+    path('myapp/create/', myapp.views.create, name='create'),
+    path('myapp/new/', myapp.views.blogform, name='new'),
+    path('myapp/<int:pk>/edit/', myapp.views.edit, name='edit'),
+    path('myapp/<int:pk>/remove/', myapp.views.remove, name='remove'),
+    path('myapp/<int:blog_id>', myapp.views.detail, name="detail"),
 ]
